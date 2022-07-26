@@ -13,11 +13,7 @@ const PORT = process.env.PORT || 8000;
 // use middlewares
 app.use(express.json());
 app.use(cors());
-app.use(
-  helmet({
-    crossOriginResourcePolicy: false,
-  })
-);
+app.use(helmet());
 
 app.use(morgan("dev"));
 

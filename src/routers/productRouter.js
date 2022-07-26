@@ -118,7 +118,6 @@ router.put(
   updateProductValidation,
   async (req, res, next) => {
     try {
-      console.log(req.body);
       const { _id, imgToDelete, ...rest } = req.body;
       const files = req.files;
       const images = files.map((img) => img.path); // new images
@@ -135,15 +134,15 @@ router.put(
       //2.  delete image from the file system
 
       const result = await updateProductById(_id, rest);
-
+      console.log(result);
       result?._id
         ? res.json({
-            status: " success",
+            status: "success",
             message: "products has been updated",
             result,
           })
         : res.json({
-            status: " error",
+            status: "error",
             message: " unable to update the product",
           });
     } catch (error) {
