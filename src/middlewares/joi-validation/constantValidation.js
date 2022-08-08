@@ -1,6 +1,6 @@
 import Joi from "joi";
 
-export const FNAME = Joi.string().required().min(3).max(20);
+export const FNAME = Joi.string().alphanum().required().min(3).max(20);
 export const LNAME = Joi.string().required().min(3).max(20);
 export const DOB = Joi.date().allow(null);
 export const DATE = Joi.date();

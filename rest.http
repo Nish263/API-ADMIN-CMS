@@ -161,7 +161,7 @@ Content-Type: application/json
 
 {   "_id":"62c026f0808b0afb29d57bbe",
     "name":" bank transfer",
-    "status":"inactive",
+    "status":"active",
     "description":"new payment method"
 }
 
@@ -169,7 +169,7 @@ Content-Type: application/json
 
 
 ###
-DELETE http://localhost:8000/api/v1/payment-method/62c027352626322f4e891a06
+DELETE http://localhost:8000/api/v1/payment-method/62c026f0808b0afb29d57bbe
 
     # "accessJWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1lMTIzQGdtYWlsLmNvbSIsImlhdCI6MTY1ODA0MjI1NiwiZXhwIjoxNjU4MDQyMzE2fQ.kWu8WSB5omDfNivtdw1s3i2Jc51Wz_p0yw_MQ9vHFWA",
     # "refreshJWT": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1lMTIzQGdtYWlsLmNvbSIsImlhdCI6MTY1ODA0MjI1NiwiZXhwIjoxNjYwNjM0MjU2fQ.92A9lidrr4htBWsoKksEA8zadn0VwmUkkBnhBeB0fww"

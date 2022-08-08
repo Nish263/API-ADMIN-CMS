@@ -3,15 +3,19 @@ import { newPaymentMethodValidation } from "../middlewares/joi-validation/Paymen
 import {
   deletePaymentById,
   getAllPayments,
+  getAPaymentMethod,
   insertPaymentMethod,
   updatePaymentById,
 } from "../models/paymentMethod/PaymentMethod.model.js";
 const router = express.Router();
 
-// return all active categories
-router.get("/", async (req, res, next) => {
+// return all active payment
+router.get("/:_id?", async (req, res, next) => {
   try {
-    const result = await getAllPayments();
+    const { _id } = req.params;
+    const result = _id
+      ? await getAPaymentMethod({ id })
+      : await getAllPayments();
     res.json({
       status: "success",
       message: "payment methods result",
@@ -22,7 +26,7 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-//add new category
+//add new payment
 router.post("/", newPaymentMethodValidation, async (req, res, next) => {
   try {
     const result = await insertPaymentMethod(req.body);
@@ -46,7 +50,7 @@ router.post("/", newPaymentMethodValidation, async (req, res, next) => {
   }
 });
 
-// update status of a categories
+// update status of a payment
 
 router.delete("/:_id", async (req, res, next) => {
   try {
